@@ -50,40 +50,42 @@ output:
 
 Unicode currently lacks a consistent and complete specification for handling Arabic inline characters. In this document we will consider two such characters:
 
-1. [Hamzao]{.trn}
+1. [#hamzao]{.trn}
 2. [E#alif xanjariyyao]{.trn} "Dagger Alef"
 
-## Hamza
+## [#hamzao]{.trn}
 
-The case for inline hamzah has been discussed in some detail but, it appears, without much official resolution.
+The case for inline [hamzao]{.trn} has been discussed in some detail but, it appears, without much official resolution.
 https://unicode.org/L2/L2014/14109-inline-chars.pdf
 https://unicode.org/L2/L2013/13226-koran-ortho.pdf Section IV
 
 We will attempt to summarize the problem here.
 
-Being a later addition to the Arabic script, hamzah is written as a diacritic on the basic skeletal text. This hamza can be written in two different ways:
-Above a base letter, known as the “seat of the hamza”: In writing the Arabic language hamza may be seated above a vowel letter: أ ؤ ئ. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: إ يٕ. In Persian language writing, it may also appear above a heh: هٔ.
-After (to the left of) a letter in the basic skeletal text. This has two sub-cases:
-Standalone hamza: After a non-joining base letter(ا،د،ذ،ر،ز،و) or at the end of a word. In this case, hamzah is written at the baseline. Examples:
-Inline hamza: After a joining base letter in the middle of a word. In this case hamza is written between the two joining base letters, above the baseline, and without affecting the connection of the two base letters. Examples:
+Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diacritic on the basic skeletal text. This [hamzao]{.trn} can be written in two different ways:
 
-For a set of rules to determine the seat of the hamza and whether hamza is to be written inline, see this article.
+1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a heh: [هٔ]{.ar}.
+2. After (to the left of) a letter in the basic skeletal text. This has two sub-cases:
+   a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}.
+   b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the connection of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
 
-For case 1, Unicode provides U+0654 Arabic Hamza above and U+0655 Arabic Hamza below as combining letters with the vowel letters alif, yaa, and waw.
 
-For case 2a, Unicode provides U+0621 Arabic letter Hamza
+For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article.
 
-It is case 2b. which is problematic and has not been given sufficient attention by both typographers and the Unicode standard. It would have been sufficient to use U+0621 and specify that it not break the joining of the letter before it with the letter after it. Unfortunately, the vast majority of fonts consider U+0621 a breaking character.
+For case 1, Unicode provides U+0654 \textsc{arabic hamza above} and U+0655 \textsc{arabic hamza below} as combining diacritics.
 
-In order to display hamza according to case 2b, most users are accustomed to approximating it with ئ which between two joining letters looks similar to an inline hamza ـئـ. In fact, due to the prevalence of this approximation, many users will consider it the correct way of writing, even in handwritten text.
+For case 2a, Unicode provides U+0621 \textsc{arabic letter hamza}.
 
-In order to follow the proper rules without approximating it with ئ, some fonts propose the use of tatweel with arabic hamza above. Examples:
+It is case 2b. which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use U+0621 \textsc{arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, the vast majority of fonts consider U+0621 \textsc{arabic letter hamza} a breaking character.
+
+In order to display [hamzao]{.trn} according to case 2b, most users are accustomed to approximating it with ئ which between two joining letters looks similar to an inline [hamzao]{.trn} ـئـ. In fact, due to the prevalence of this approximation, many users will consider it the correct way of writing, even in handwritten text.
+
+In order to follow the proper rules without approximating it with ئ, some fonts propose the use of tatweel with arabic [hamzao]{.trn} above. Examples:
 
 This solution is not ideal because it introduces a character in the basic skeletal text (tatweel) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
 
-Besides this being an improper hack, this solution will simply not work when inline hamza comes between lam and alef. In this case hamza properly ought not to break the mandatory lam-alef ligature. Examples:
+Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between lam and alef. In this case [hamzao]{.trn} properly ought not to break the mandatory lam-alef ligature. Examples:
 
-Such words are common in some writing styles of Quranic text. Even in non-Quranic text there are some words which require inline hamza between lam and alef. Examples:
+Such words are common in some writing styles of Quranic text. Even in non-Quranic text there are some words which require inline [hamzao]{.trn} between lam and alef. Examples:
 Dagger alef
 Dagger alef can also be considered an inline character. Depending on the writing style and intended pronunciation, it can appear either:
 Above a letter: هٰذا، ذٰلِكَ، صَلَوٰة، عَلَىٰ, or
@@ -94,7 +96,7 @@ Unicode provides U+0670 Arabic superscript alef to encode dagger alef. Being a c
 
 Cases 2a and 2b do not have a standard specification for being input. Many fonts propose using tatweel + 0670 for case 2a, and NBSP/NNBSP + 0670 for case 2b.
 
-However, this solution is problematic for some of the same reasons as for hamza:
+However, this solution is problematic for some of the same reasons as for [hamzao]{.trn}:
 It introduces characters in the text which are not part of the word’s spelling: tatweel and NBSP/NNBSP.
 The user has to choose between between tatweel and NBSP/NNBSP simply on the basis of whether the preceding character is joining or non-joining. The computer’s shaping engine already handles joining of base letters. Therefore, this choice left to the user is non-semantic and unnecessary.
 It may adversely affect computerized search and indexing.
@@ -109,7 +111,7 @@ Must not affect the joining of base letters.
 Solution
 We propose specifying the use of U+034F Combining Grapheme Joiner to determine whether a diacritic appears above or after a base letter.
 
-Also that U+0654 Arabic Hamza above be used for the diacritic inline hamza and U+0670 arabic superscript alef continue to be used for the diacritic dagger alef.
+Also that U+0654 Arabic [hamzao]{.trn} above be used for the diacritic inline [hamzao]{.trn} and U+0670 arabic superscript alef continue to be used for the diacritic dagger alef.
 
 If the diacritic is to appear above the base letter then it shall be input after the letter without intermediate CGJ.
 
@@ -117,7 +119,7 @@ If the diacritic is to appear after the base letter then it shall be input after
 
 CGJ and/or the diacritic shall not affect the joining of base letters.
 
-We recommend to font developers and typographers that CGJ + hamza above after a non-joining letter be rendered identical to U+0621.
+We recommend to font developers and typographers that CGJ + [hamzao]{.trn} above after a non-joining letter be rendered identical to U+0621.
 
 Here are some examples of the proposed input sequences and the displayed rendering:
 
