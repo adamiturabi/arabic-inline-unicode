@@ -1,0 +1,7 @@
+#!/bin/sh
+Rscript -e "rmarkdown::render('index.Rmd','pagedown::html_paged')"
+#Rscript -e "rmarkdown::render('index.Rmd','bookdown::gitbook')"
+#Rscript -e "rmarkdown::render('index.Rmd','bookdown::gitbook', output_file='docs/index.html', output_dir='docs')"
+touch docs/.nojekyll
+cp -R fonts docs/
+

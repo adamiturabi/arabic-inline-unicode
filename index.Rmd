@@ -1,0 +1,286 @@
+---
+title: "Rules for writing hamza in the Arabic script"
+author: "adami.turabi [at] protonmail [dot] com"
+output:
+  bookdown::gitbook:
+    css: mystyle.css
+    split_by: "none"
+    self_contained: yes
+    pandoc_args: ["--lua-filter=trn.lua"]
+    keep_md: yes
+    config:
+      toc:
+        collapse: section
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        github: no
+        twitter: yes
+        linkedin: yes
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+      info: yes
+  pagedown::html_paged:
+    pandoc_args: ["--lua-filter=trn.lua"]
+    css:
+      - mystyle.css
+      - default-page
+      - default
+---
+# Preface{-}
+
+```{r, results='hide', include=FALSE}
+datetime = format(Sys.time(), "%c")
+```
+Last updated: `r datetime`.
+
+The Arabic [subject-information]{.sc} fonts in this article may not render correctly in the Chrome and Chromium browsers. In this case please use Firefox or Safari instead.
+
+[بسم الله الرحمن الرحيم]{.ar}
+
+[الحمد لله والصلاة والسلام على نبينا محمد. أما بعد:]{.ar}
+
+# Introduction
+
+The rules of [hamzao]{.trn} orthography in the Arabic script are quite complex. The matter is further complicated by the limitations of metal and digital font technology. We attempt to give a comprehensive set of rules for writing [hamzao]{.trn} and some recommendations for typographers and typesetters.
+
+# Disclaimer
+
+This article is based on findings from the author's research and may have errors. Any errors reported to the author's email will be greatly appreciated.
+
+# Scope
+
+We treat only the orthography of Standard Arabic. The orthography of the Qurʾān ([الرسم العثماني]{.ar}) is not discussed.
+
+# [hamzao]{.trn} orthography
+
+## Different ways [hamzao]{.trn} is written
+
+[hamzao]{.trn} is written in four different ways:
+
+1. Seated on an [Ealif]{.trn}: [أ]{.ar} or [إ]{.ar}
+2. Seated on an [wAw]{.trn}: [ؤ]{.ar}
+3. Seated on an [yAE]{.trn}: [ئ]{.ar}
+4. Unseated: [ء]{.ar}
+
+Here are some of notes about writing [hamzao]{.trn} in the above four methods:
+
++ When unseated [hamzao]{.trn} comes between two letters that are joined, then it is written above the line that joins them, for example: [خَطِيءَة]{.ar} [xaTIEao]{.trn}. In this word, the [yAE]{.trn} [ي]{.ar} joins to the [tAE marbUTao]{.trn} [ة]{.ar}.
+
++ When unseated [hamzao]{.trn} is followed by an [Ealif]{.trn}: [ءا]{.ar},  the combination of [hamzao]{.trn} and [Ealif]{.trn} is usually written as [آ]{.ar} as a convention. Examples: [آمَنَ]{.ar} [EAmana]{.trn}, [ظَمْآن]{.ar} [PamEAn]{.trn}, [شَنَآن]{.ar} [canaEAn]{.trn}. However, when the [Ealif]{.trn} is a suffix or part of a suffix, or the [hamzao]{.trn} is doubled, or there is an [Ealif]{.trn} before the [hamzao]{.trn} then we will write [ءا]{.ar}, not [آ]{.ar}. Examples: [شَيْءَانِ]{.ar} [cayEAni]{.trn}, [سَءَّال]{.ar} [saEEAl]{.trn}, [قِرَاءَات]{.ar} [qirAEAt]{.trn}. 
+
++ When [hamzao]{.trn} is seated on [Ealif]{.trn}, if it has an [kasrao]{.trn}, it is written below the [Ealif]{.trn}: [إِ]{.ar}. Otherwise, it is written above the [Ealif]{.trn}: [أَ]{.ar}, [أُ]{.ar}, [أْ]{.ar}.
+
++ When [hamzao]{.trn} is seated on [yAE]{.trn} [ئ]{.ar} the dots of the [yAE]{.trn} are no longer written. Here's how it will appear in different positions:
+
+  Isolated | End | Middle | Beginnning
+  :--------|:----|:-------|:----------
+  [ئ]{.ar}| [ـئ]{.ar}| [ـئـ]{.ar}| [ئـ]{.ar}
+
+  Note that [hamzao]{.trn} is seated on [yAE]{.trn} in the middle position [ـئـ]{.ar} is different from unseated [hamzao]{.trn} between two joining letters [ـءـ]{.ar}.
+
+So how do we know when to write [hamzao]{.trn} unseated and when seated? And how do we choose between its three different seats? There are a set of rules that we need to follow in order to correctly write [hamzao]{.trn}. Before we give the rules we will first present the underlying principle behind the rules.
+
+## Underlying principle of determining the seat of [hamzao]{.trn}
+
+The most general case is when [hamzao]{.trn} is in the middle of a word. 
+
+Arabic has three short vowels, three long vowels, two diphthongs, and a [sukUn]{.trn}. Each of these has an order of precedence and a default [hamzao]{.trn} seat (except for [sukUn]{.trn} which is last in precedence and therefore never determines the seat).
+
+Precedence | Vowel | Default seat | Orthography
+:--|:------|:--------|:------
+1. | [I]{.trn}/[ay]{.trn} | unseated      | [ء]{.ar}
+2. | [i]{.trn}            | [yAE]{.trn}   | [ئ]{.ar}
+3. | [U]{.trn}/[aw]{.trn} | unseated      | [ء]{.ar}
+4. | [u]{.trn}            | [wAw]{.trn}   | [ؤ]{.ar}
+5. | [A]{.trn}            | unseated      | [ء]{.ar}
+6. | [a]{.trn}            | [Ealif]{.trn} | [أ]{.ar}
+7. | [sukUn]{.trn}        | -             | -
+
+Consider the vowel on the consonant before the [hamzao]{.trn} and the _shortened_ vowel on the [hamzao]{.trn} itself. Determine which of the two vowels is higher in precedence in the above table. The prevailing vowel's default seat will be the seat of the [hamzao]{.trn}.
+
+This is the basic underlying principle although there are a few exceptions. We now give a comprehensive set of rules and many examples that should exemplify this principle and the exceptions.
+
+## Ordered set of rules
+
+1. If [hamzao]{.trn} occurs in the beginning of a word:
+   a. If the [hamzao]{.trn} carries a long-[A]{.trn} vowel, it is written unseated followed by an [Ealif]{.trn} and written as [آ]{.ar}, for example [آمَنَ]{.ar} [EAmana]{.trn}.
+   b. If the [hamzao]{.trn} carries any other vowel, it is written seated on an [Ealif]{.trn}, and is marked with the appropriated vowel mark, for example [أَسْلَمَ]{.ar} [Easlama]{.trn}, [أُرِيدُ]{.ar} [EurIdu]{.trn}, [إِسْلَام]{.ar} [EislAm]{.trn}, [إِيمَان]{.ar} [EImAn]{.trn}, [أُوخِذَ]{.ar} [EUxipa]{.trn}. 
+
+2. If [hamzao]{.trn} occurs in the middle of a word:
+   a. If there is a long vowel or diphthong before the [hamzao]{.trn}:
+        i. If the [hamzao]{.trn} is after a long-[I]{.trn} vowel or [ay]{.trn} diphthong, then the [hamzao]{.trn} will be written unseated. Examples:  
+           [هَيْءَة]{.ar} [hayEao]{.trn}, [خَطِيءَة]{.ar} [xaTIEao]{.trn}  
+           [بَرِيءُونَ]{.ar} [barIEUna]{.trn}, [بَرِيءَانِ]{.ar} [barIEAni]{.trn}, [بَرِيءِينَ]{.ar} [barIEIna]{.trn}, [بَرِيءَيْنِ]{.ar} [barIEayni]{.trn}  
+           [شَيْءُهُ]{.ar} [cayEuhu]{.trn}, [شَيْءَهُ]{.ar} [cayEahu]{.trn}, [شَيْءِهِ]{.ar} [cayEihi]{.trn}, [شَيْءَانِ]{.ar} [cayEAni]{.trn}, [شَيْءَيْنِ]{.ar} [cayEayni]{.trn}  
+           [مَجِيءُهُ]{.ar} [majIEuhu]{.trn}, [مَجِيءَهُ]{.ar} [majIEahu]{.trn}, [مَجِيءِهِ]{.ar} [majIEihi]{.trn}  
+       ii. If the [hamzao]{.trn} is after a long-[U]{.trn} vowel or [aw]{.trn} diphthong, then:  
+           1. If the [hamzao]{.trn} has an [kasrao]{.trn} it is written seated on [yAE]{.trn}. Examples:
+              [سُوئِهِ]{.ar} [sUEihi]{.trn}, [ضَوْئِهِ]{.ar} [DawEihi]{.trn}  
+           2. Otherwise, the [hamzao]{.trn} is written unseated. Examples:
+              [سُوءَهُ]{.ar} [sUEahu]{.trn}, [سُوءَانِ]{.ar} [sUEAni]{.trn},  [تَوْءَم]{.ar} [tawEam]{.trn}, [ضَوْءَهُ]{.ar} [DawEahu]{.trn},  [ضَوْءَانِ]{.ar} [DawEAni]{.trn},  [سُوءُهُ]{.ar} [sUEuhu]{.trn},  [يَسُوءُونَ]{.ar} [yasUEUna]{.trn}  
+      iii. If the [hamzao]{.trn} is after a long [A]{.trn}-vowel, then:
+           1. If the [hamzao]{.trn} has an [kasrao]{.trn} it is written seated on [yAE]{.trn}. Example: [سَائِل]{.ar} [sAEil]{.trn}.  
+           2. If the [hamzao]{.trn} has an [Dammao]{.trn} it is written seated on [wAw]{.trn}. Example: [تَسَاؤُل]{.ar} [tasAEul]{.trn}.  
+           3. Otherwise, when the [hamzao]{.trn} has an [fatHao]{.trn}, it is written unseated. Example: [تَسَاءَلَ]{.ar} [tasAEala]{.trn}, [قِرَاءَات]{.ar} [qirAEAt]{.trn}.
+   b. If the letter before the [hamzao]{.trn} has a [sukUn]{.trn} and is not [wAw]{.trn} or [yAE]{.trn} (in which case rule 2.a would apply), then:
+       i. If the [hamzao]{.trn} was originally at the end of the word, but a suffix has been attached to the word such that the [hamzao]{.trn} is now in the middle of the word, then the [hamzao]{.trn} will be written unseated. Examples: [جُزْءَانِ]{.ar} [juzEAni]{.trn}, [عِبْءَانِ]{.ar} [eibEAni]{.trn}, [عِبْءَيْنِ]{.ar} [eibEayni]{.trn}, [بُطْءَهُ]{.ar} [buTEahu]{.trn}, [بُطْءُهُ]{.ar} [buTEuhu]{.trn}, [بُطْءِهِ]{.ar} [buTEihi]{.trn}. ([انِ]{.ar}, [يْنِ]{.ar}, [هُ]{.ar}, and [هِ]{.ar} are suffixes).
+      ii. Otherwise, if the [hamzao]{.trn} is originally at the middle of the word, then:
+          1. If the [hamzao]{.trn} has a [Dammao]{.trn} it is written seated on [wAw]{.trn}. Example: [مَسْؤُول]{.ar} [masEUl]{.trn}.
+          2. If the [hamzao]{.trn} has a [kasrao]{.trn} it is written seated on [yAE]{.trn}. Example: [تَرْئِيس]{.ar} [tarEIs]{.trn}.  
+          3. If the [hamzao]{.trn} has an [fatHao]{.trn} then:  
+             a. If it is followed by a long-[A]{.trn} vowel represented by an [Ealif]{.trn}, the [hamzao]{.trn} is unseated followed by the [Ealif]{.trn} and the combination is written as [آ]{.ar}. Example: [مِرْآة]{.ar} [mirEAo]{.trn}, [ظَمْآن]{.ar} [PamEAn]{.trn}.  
+             b. Otherwise, if there is no [Ealif]{.trn} after the [hamzao]{.trn}, the [hamzao]{.trn} is written seated on [Ealif]{.trn}. Examples: [مَسْأَلَة]{.ar} [masEalao]{.trn}, [الْمَرْأَة]{.ar} [almarEao]{.trn}.
+   c. If the [hamzao]{.trn} has a [sukUn]{.trn}, then look at the vowel mark on the letter preceding it:
+        i. If the letter preceding [hamzao]{.trn} has a [kasrao]{.trn}, the [hamzao]{.trn} is written seated on [yAE]{.trn}. Example: [بِئْسَ]{.ar} [biEsa]{.trn}.
+       ii. If the letter preceding [hamzao]{.trn} has a [Dammao]{.trn}, the [hamzao]{.trn} is written seated on [wAw]{.trn}. Example: [سُؤْلَكَ]{.ar} [suElaka]{.trn}.
+      iii. If the letter preceding [hamzao]{.trn} has a [fatHao]{.trn}, the [hamzao]{.trn} is written seated on [Ealif]{.trn}. Example: [كَأْس]{.ar} [kaEs]{.trn}.
+   d. Otherwise, only if the above conditions are not satisfied, then compare the vowel marks of the [hamzao]{.trn} and the letter before it:
+        i. If either vowel mark is an [kasrao]{.trn} then the [hamzao]{.trn} will be written on a [yAE]{.trn}. Examples: [سُئِلَ]{.ar} [suEila]{.trn}, [يَئِسَ]{.ar} [yaEisa]{.trn}, [مُتَّكِئِينَ]{.ar} [muttakiEIna]{.trn}, [رَئِيس]{.ar} [raEIs]{.trn}.
+       ii. If neither vowel mark is an [kasrao]{.trn}, and at least one of the vowel marks is a [Dammao]{.trn}, then the [hamzao]{.trn} will be written on a [wAw]{.trn}. Examples: [سُؤَال]{.ar} [suEAl]{.trn}, [رُؤُوس]{.ar} [ruEUs]{.trn}, [لُؤَيّ]{.ar} [luEayy]{.trn}.
+      iii. Otherwise, if both of the vowel marks are [fatHao]{.trn}s, then:  
+           1. If the [hamzao]{.trn} is followed by a long-[A]{.trn} vowel represented by an [Ealif]{.trn}, the [hamzao]{.trn} is written unseated. Examples: [شَنَآن]{.ar} [canaEAn]{.trn}.  
+           2. Otherwise the [hamzao]{.trn} will be written on an [Ealif]{.trn}. Examples: [سَأَلَ]{.ar} [saEala]{.trn}, [رَأَىٰ]{.ar} [raEA]{.trn}.
+
+      These set of rules apply even if the [hamzao]{.trn} or the previous letter is doubled. Examples [رَأَّسَ]{.ar} [raEEasa]{.trn}, [يُرَئِّسُ]{.ar} [yuraEEisu]{.trn}, [رُئِّسَ]{.ar} [ruEEisa]{.trn}, [تَفَؤُّل]{.ar} [tafaEEul]{.trn}, [يُبَرِّئُونَ]{.ar} [yubarriEUna]{.trn}, [يُبَرَّؤُونَ]{.ar} [yubarraEUna]{.trn}, [سَءَّال]{.ar} [saEEAl]{.trn}, [لَءَّال]{.ar} [laEEAl]{.trn}.
+
+3. If [hamzao]{.trn} is at the end of a word, disregard the vowel mark on it and consider only the letter before the [hamzao]{.trn}.
+   a. If there is a long vowel ([A]{.trn}, [I]{.trn}, [U]{.trn}) or a diphthong ([aw]{.trn}, [ay]{.trn}) before it then the [hamzao]{.trn} will be written unseated. Examples: [دُعَاءُ]{.ar} [dueAEu]{.trn}, [سُوءُ]{.ar} [sUEu]{.trn}, [جِيءَ]{.ar} [jIEa]{.trn}, [ضَوْءَ]{.ar} [DawEa]{.trn}, [شَيْءَ]{.ar} [cayEa]{.trn}.
+   b. Otherwise, if the previous letter has a [sukUn]{.trn}, the [hamzao]{.trn} will again be unseated. Examples: [بُطْءُ]{.ar} [buTEu]{.trn}, [عِبْءُ]{.ar} [eibEu]{.trn}, [شَطْءُ]{.ar} [caTEu]{.trn}
+   c. Otherwise, if the previous letter is a doubled [wAw]{.trn} with an [Dammao]{.trn}, the [hamzao]{.trn} will again be unseated. Example [تَبَوُّءُ]{.ar} [tabawwuEu]{.trn}.
+   d. Otherwise, if the previous letter has an:
+        i. [kasrao]{.trn}, the [hamzao]{.trn} is written seated on [yAE]{.trn}. Example [يُهَدِّئُ]{.ar} [yuhaddiEu]{.trn}, [سَيِّئُ]{.ar} [sayyiEu]{.trn}.
+       ii. [Dammao]{.trn}, the [hamzao]{.trn} is written seated on [wAw]{.trn}. Example [بَطُؤَ]{.ar} [baTuEa]{.trn}.
+      iii. [fatHao]{.trn}, the [hamzao]{.trn} is written seated on [Ealif]{.trn}. Example [يَهْدَأُ]{.ar} [yahdaEu]{.trn}, [مُبْتَدَإِ]{.ar} [mubtadaEi]{.trn}.
+     
+## Prefixes and suffixes
+
++ If [hamzao]{.trn} is in the beginning of a word, adding a prefix to the word will not alter the writing of the [hamzao]{.trn}. Examples:  
+  [لِ + أُسْتَاذِ = لِأُسْتَاذِ]{.ar}  
+  [الْ + آخِرَة = الْآخِرَة]{.ar}
+
++ If [hamzao]{.trn} is at the end of a word, adding a suffix to the word can, in general, alter the writing of the [hamzao]{.trn}, except in cases that have already been mentioned above. Examples:  
+  [مُبْتَدَأَ + انِ = مُبْتَدَءَانِ]{.ar}  
+  [دُعَاءُ + هُ = دُعَاؤُهُ]{.ar}  
+  [ضَوْءِ + هِ = ضَوْئِهِ]{.ar}  
+  [بُطْءُ + هُ = بُطْءُهُ]{.ar}
+
++ As we mentioned earlier, when unseated [hamzao]{.trn} is followed by an [Ealif]{.trn} which is not a suffix: [ءا]{.ar},  the combination of [hamzao]{.trn} and [Ealif]{.trn} is conventionally written as [آ]{.ar}. However, if the unseated [hamzao]{.trn} is doubled or preceded by another [Ealif]{.trn} then it won't be written as [آ]{.ar}. Example: [سَءَّال]{.ar} [saEEAl]{.trn}, [قِرَاءَات]{.ar} [qirAEAt]{.trn}.
+
+# [tanwIn]{.trn} on final [hamzao]{.trn}
+
+[tanwIn]{.trn} on a final [hamzao]{.trn} does not affect the writing of the [hamzao]{.trn} except in the case of [tanwIn al-fatH]{.trn}. When writing [tanwIn al-fatH]{.trn} on a [hamzao]{.trn} at the end of a word:
+
+1. If there is an [Ealif]{.trn} before a unseated [hamzao]{.trn} [اء]{.ar}, then we don't add a silent [Ealif]{.trn} when writing [tanwIn al-fatH]{.trn}. For example [دَاء]{.ar} becomes [دَاءً]{.ar} [dAEan]{.trn}, not [دَاءًا]{.ar}.
+
+2. Otherwise, we add the silent [Ealif]{.trn} after the [hamzao]{.trn} so that the [hamzao]{.trn} is now in the middle of the word with a suffix [Ealif]{.trn} after it. We now pretend that the [hamzao]{.trn} has an [fatHao]{.trn} and that the [Ealif]{.trn} after it is a long-[A]{.trn} vowel. Then we go through the rules for writing [hamzao]{.trn} in the middle of a word (given above) to determine how [hamzao]{.trn} will be written. We then write the [an]{.trn}-mark on the [hamzao]{.trn}. Examples:
+
++ [مُبْتَدَأ]{.ar} becomes [مُبْتَدَأٌ، مُبْتَدَءًا، مُبْتَدَإٍ]{.ar} 
++ [مَلْجَأ]{.ar} becomes [مَلْجَأٌ، مَلْجَءًا، مَلْجَإٍ]{.ar}
++ [جُزْء]{.ar} becomes [جُزْءٌ، جُزْءًا، جُزْءٍ]{.ar}
++ [شَيْء]{.ar} becomes [شَيْءٌ، شَيْءًا، شَيْءٍ]{.ar}
+
+# Variants
+
+There are some historical and regional variants to the above rules. The main one is a variant of rule 2.b.ii above. In this variant, when the letter before [hamzao]{.trn} has a [sukUn]{.trn}, the [hamzao]{.trn} is generally written unseated. So they write:
+
++ [مَسْءُول]{.ar} instead of [مَسْؤُول]{.ar}
++ [أَسْءِلَة]{.ar} instead of [أَسْئِلَة]{.ar}
++ [مَسْءَلَة]{.ar} instead of [مَسْأَلَة]{.ar}
+
+However, this rule appears to not consistently be followed. For example, [al-marEao]{.trn} is generally always written [الْمَرْأَة]{.ar} never [الْمَرْءَة]{.ar}.
+
+A second variant is to write [hamzao]{.trn} unseated when:
+
+1. it has a [Dammao]{.trn} and is followed by a long-[U]{.trn} vowel. Example: [رُءُوس]{.ar} instead of [رُؤُوس]{.ar}.
+1. it has a [kasrao]{.trn} and is followed by a long-[I]{.trn} vowel. Example: [رَءِيس]{.ar} instead of [رَئِيس]{.ar}.
+
+# Typographical limitations
+
+Due to what appears to have been a limitation of typesetting technology in the days of typewriters, metal typography, and early digital typography, unseated [hamzao]{.trn} between two joining letters [ـءـ]{.ar} was usually written as seated on [yAE]{.trn} instead: [ـئـ]{.ar}. Because of this limitation we are now accustomed to seeing:
+
++ [شَيْئًا]{.ar} instead of [شَيْءًا]{.ar}
++ [خَطِيئَة]{.ar} instead of [خَطِيءَة]{.ar}
++ [هَيْئَة]{.ar} instead of [هَيْءَة]{.ar}
++ [عِبْئَيْنِ]{.ar} instead of [عِبْءَيْنِ]{.ar}
+
+and similar variants.
+
+These variants have pervaded to such a degree that many modern explanations on the rules of [hamzao]{.trn} orthography present the above as the correct way of writing, and modify their rules with exceptions to allow this writing.
+
+Fortunately, advancements in digital font technology now allow us to revert back to the original rules. However, unfortunately, only very few computer fonts today actually implement this feature.
+
+Two fonts, of which we are aware, that do allow the preferred orthography are:
+
+1. Dr Khaled Hosny's "Amiri": https://www.amirifont.org/
+2. DecoType "Naskh": https://www.decotype.com/oneliner/
+
+With these "[hamzao]{.trn}-safe fonts" you can always use U+0621 "Arabic Letter Hamza" to type unseated [hamzao]{.trn} no matter whether it is between joining or non-joining letters. With most other fonts U+0621 "Arabic Letter Hamza" will prevent the surrounding two letters from joining.
+
+We recommend that Arabic typographers implement this much needed feature as has been implemented in the two fonts mentioned above.
+
+This issue has been discussed in detail by Thomas Milo in Unicode L2/14-109: https://unicode.org/L2/L2014/14109-inline-chars.pdf.
+
+We may also mention that there is a way of faking the correct orthography with most fonts. This is to write a combination of U+0640 "Arabic Tatweel" and U+0654 "Arabic hamza above" thus [ـٔ]{.ar} to achieve the appearance of unseated [hamzao]{.trn} between two joining letters. However, this will not work when [hamzao]{.trn} is between [lAm]{.trn} and [Ealif]{.trn} in the mandatory [lam]{.trn}-[Ealif]{.trn} ligature [لا]{.ar} (correct: [لءا]{.ar}, incorrect: [لـٔا]{.ar}). This may also affect the searching of characters in a digital document so we are hesitant to recommend this hack.
+
+[الٓمٓ.
+ذَلِكَ ٱلْكِتَبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى لِّلْمُتَّقِينَ.
+ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَهُمْ يُنفِقُونَ.
+وَٱلَّذِينَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ وَبِٱلْءَاخِرَةِ هُمْ يُوقِنُونَ.
+أُو۟لَٓئِكَ عَلَىٰ هُدًۭى مِّن رَّبِّهِمْ ۖ وَأُو۟لَٓئِكَ هُمُ ٱلْمُفْلِحُونَ.
+]{.ar}
+
+[
+1|1|بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+1|2|ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ
+1|3|ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+1|4|مَٰلِكِ يَوْمِ ٱلدِّينِ
+1|5|إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+1|6|ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ
+1|7|صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ
+2|1|بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ الٓمٓ
+2|2|ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ
+2|3|ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَٰهُمْ يُنفِقُونَ
+2|4|وَٱلَّذِينَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ وَبِٱلْءَاخِرَةِ هُمْ يُوقِنُونَ
+2|5|أُو۟لَٰٓئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ وَأُو۟لَٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ
+]{.ar}
+
+[
+صِرَٰطَ
+ذَٰلِكَ
+أُو۟لَٰٓئِكَ
+كِتَٰبَ
+الأٓخرة
+ذَ ٰلِكَ
+]{.ar}
+
+[
+1|1|بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+1|2|ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ
+1|3|ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+1|4|مَـٰلِكِ يَوْمِ ٱلدِّينِ
+1|5|إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+1|6|ٱهْدِنَا ٱلصِّرَ ٰطَ ٱلْمُسْتَقِيمَ
+1|7|صِرَ ٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ
+2|1|بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ الٓمٓ
+2|2|ذَ ٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ
+2|3|ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ
+2|4|وَٱلَّذِينَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ وَبِٱلْءَاخِرَةِ هُمْ يُوقِنُونَ
+2|5|أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ
+17|7|إِنْ أَحْسَنتُمْ أَحْسَنتُمْ لِأَنفُسِكُمْ وَإِنْ أَسَأْتُمْ فَلَهَا فَإِذَا جَآءَ وَعْدُ ٱلْءَاخِرَةِ لِيَسُۥٓـُٔوا۟ وُجُوهَكُمْ
+إِنَّ ٱلَّذِينَ كَفَرُوا۟ لَن تُغْنِىَ عَنْهُمْ أَمْوَٰلُهُمْ وَلَآ أَوْلَٰدُهُم مِّنَ ٱللَّهِ شَيْـًٔا وَأُو۟لَٰٓئِكَ هُمْ وَقُودُ ٱلنَّارِ
+]{.ar}
+
