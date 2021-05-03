@@ -40,6 +40,7 @@ output:
       - default-page
       - default
   pdf_document:
+    number_sections: true
     pandoc_args: ["--lua-filter=trn.lua"]
     latex_engine: xelatex
     keep_tex: true
@@ -71,38 +72,54 @@ Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diac
 
 For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article.
 
-For case 1, Unicode provides U+0654 \textsc{arabic hamza above} and U+0655 \textsc{arabic hamza below} as combining diacritics.
+For case (1), Unicode provides [◌ٔ]{.ar} \textsc{U+0654 arabic hamza above} and [◌ٕ]{.ar} \textsc{U+0655 arabic hamza below} as combining diacritics.
 
-For case 2a, Unicode provides U+0621 \textsc{arabic letter hamza}.
+For case (2a), Unicode provides [ء]{.ar} \textsc{U+0621 arabic letter hamza}.
 
-It is case 2b. which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use U+0621 \textsc{arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, the vast majority of fonts consider U+0621 \textsc{arabic letter hamza} a breaking character.
+It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} \textsc{U+0621 arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, the vast majority of fonts consider [ء]{.ar} \textsc{U+0621 arabic letter hamza} a breaking character.
 
-In order to display [hamzao]{.trn} according to case 2b, most users are accustomed to approximating it with ئ which between two joining letters looks similar to an inline [hamzao]{.trn} ـئـ. In fact, due to the prevalence of this approximation, many users will consider it the correct way of writing, even in handwritten text.
+In order to display [hamzao]{.trn} according to case (2b), most users are accustomed to approximating it with [ئ]{.ar} \textsc{U+0626 arabic letter yeh with hamza above} which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}. In fact, due to the prevalence of this approximation, many users will consider it the correct way of writing, even in handwritten text.
 
-In order to follow the proper rules without approximating it with ئ, some fonts propose the use of tatweel with arabic [hamzao]{.trn} above. Examples:
+In order to follow the proper rules without approximating it with [ئ]{.ar}, some fonts propose the use of [ـ]{.ar} \textsc{U+0640 arabic tatweel} with [◌ٔ]{.ar} \textsc{U+0654 arabic hamza above}. For example, [خطيءة]{.ar} will be input with the following sequence:
 
-This solution is not ideal because it introduces a character in the basic skeletal text (tatweel) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
+Sequence Order | Arabic character | Encoding | Description
+:--|:------|:--------|:------
+1. |[خ]{.ar}| U+62E | \textsc{arabic letter khah}
+2. |[ط]{.ar}| U+637 | \textsc{arabic letter tah}
+3. |[ي]{.ar}| U+64A | \textsc{arabic letter yeh}
+4. |[ـ]{.ar}| U+640 | \textsc{arabic tatweel}
+5. |[◌ٔ]{.ar}| U+654 | \textsc{arabic hamza above}
+6. |[ة]{.ar}| U+629 | \textsc{arabic letter teh marbuta}
 
-Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between lam and alef. In this case [hamzao]{.trn} properly ought not to break the mandatory lam-alef ligature. Examples:
+This solution is not ideal because it introduces a character in the basic skeletal text (U+640 \textsc{arabic tatweel}) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
 
-Such words are common in some writing styles of Quranic text. Even in non-Quranic text there are some words which require inline [hamzao]{.trn} between lam and alef. Examples:
-Dagger alef
+Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between [lAm]{.trn} and [Ealif]{.trn}. In this case [hamzao]{.trn} properly ought not to break the mandatory [lAm]{.trn}-[Ealif]{.trn} ligature [لا]{.ar}. For example, the word [الءاخرة]{.ar} [alEAxirao]{.trn} has a [hamzao]{.trn} between the [lAm]{.trn} and [Ealif]{.trn}. When input with a U+640 \textsc{arabic tatweel}, it will be displayed incorrectly as [الـٔاخرة]{.ar}.
+
+Such words are common in some writing styles of [#qurEAn]{.trn2}ic text. Even in non-[#qurEAn]{.trn2}ic text there are some words which require inline [hamzao]{.trn} between [lAm]{.trn} and [Ealif]{.trn}. For example [مَلَءًا]{.ar} [malaEan]{.trn} and [لَءَّال]{.ar} [laEEAl]{.trn}.
+
+## Dagger alef
+
 Dagger alef can also be considered an inline character. Depending on the writing style and intended pronunciation, it can appear either:
-Above a letter: هٰذا، ذٰلِكَ، صَلَوٰة، عَلَىٰ, or
-After a letter. This two has two sub-cases:
-After a non-joining letter: صلو ٰت, صر ٰط، ذ ٰلك
-After a joining letter: هـٰذا، أولـٰئك
-Unicode provides U+0670 Arabic superscript alef to encode dagger alef. Being a combining character, it is sufficient to encode case 1 above.
 
-Cases 2a and 2b do not have a standard specification for being input. Many fonts propose using tatweel + 0670 for case 2a, and NBSP/NNBSP + 0670 for case 2b.
+1. Above a letter: [هٰذا]{.ar} [hApA]{.trn}, [ذٰلك]{.ar} [pAlika]{.trn}, [صلوٰة]{.ar} [SalAo]{.trn}, [علىٰ]{.ar} [ealA]{.trn}
+2. After a letter. This two has two sub-cases:
+   a. After a non-joining letter: [صلو ٰت]{.ar} [SalawAt]{.trn}, [صر ٰط]{.ar} [SirAT]{.trn}, [ذ ٰلك]{.ar} [pAlika]{.trn}
+   b. After a joining letter: [هـٰذا]{.ar} [hApA]{.trn}, [أولـٰئك]{.ar} [EulAEika]{.trn}
+
+Unicode provides [◌ٰ]{.ar} U+0670 \textsc{arabic superscript alef} to encode Dagger Alef. Being a combining character, it is sufficient to encode case (1) above.
+
+Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \textsc{U+0640 arabic tatweel} combined with U+0670 \textsc{arabic superscript alef} for case 2a, and U+00A0 \textsc{no-break space (nbsp)} or U+202F \textsc{narrow no-break space (nnbsp)} combined with U+0670 \textsc{arabic superscript alef} for case 2b.
 
 However, this solution is problematic for some of the same reasons as for [hamzao]{.trn}:
-It introduces characters in the text which are not part of the word’s spelling: tatweel and NBSP/NNBSP.
-The user has to choose between between tatweel and NBSP/NNBSP simply on the basis of whether the preceding character is joining or non-joining. The computer’s shaping engine already handles joining of base letters. Therefore, this choice left to the user is non-semantic and unnecessary.
-It may adversely affect computerized search and indexing.
 
-Other fonts will automatically offset the dagger alef to the left if a fatha is encoded before it. Thus they can display هٰذا and هَـٰذا but (problematically) not هـٰذا.
-Summary
+1. It introduces characters in the text which are not part of the word’s spelling: \textsc{tatweel} and \textsc{nbsp/nnbsp}.
+2. The user has to choose between between \textsc{tatweel} and \textsc{nbsp/nnbsp} simply on the basis of whether the preceding character is joining or non-joining. The computer’s shaping engine already handles joining of base letters. Therefore, this choice left to the user is non-semantic and unnecessary.
+3. It may adversely affect computerized search and indexing.
+
+Other fonts will automatically offset the Dagger Alef to the left if a [◌َ]{.ar} U+064E \textsc{arabic fatha} is encoded before it. Thus these fonts can display [هٰذا]{.ar} and [هَـٰذا]{.ar} but (problematically) not [هـٰذا]{.ar}.
+
+## Summary
+
 We may condense the problem statement thus:
 
 Arabic has the need to display inline characters as diacritics that:
