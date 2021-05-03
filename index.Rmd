@@ -66,7 +66,7 @@ We will attempt to summarize the problem here.
 Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diacritic on the basic skeletal text. This [hamzao]{.trn} can be written in two different ways:
 
 1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a heh: [هٔ]{.ar}.
-2. After (to the left of) a letter in the basic skeletal text. This has two sub-cases:
+2. After (to the left of) a base letter in the basic skeletal text. This has two sub-cases:
    a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}, [عِبْء]{.ar}.
    b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the connection of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
 
@@ -101,12 +101,12 @@ Such words are common in some writing styles of [#qurEAn]{.trn2}ic text. Even in
 
 Dagger alef can also be considered an inline character. Depending on the writing style and intended pronunciation, it can appear either:
 
-1. Above a letter: [هٰذا]{.ar} [hApA]{.trn}, [ذٰلك]{.ar} [pAlika]{.trn}, [صلوٰة]{.ar} [SalAo]{.trn}, [علىٰ]{.ar} [ealA]{.trn}
-2. After a letter. This two has two sub-cases:
-   a. After a non-joining letter: [صلو ٰت]{.ar} [SalawAt]{.trn}, [صر ٰط]{.ar} [SirAT]{.trn}, [ذ ٰلك]{.ar} [pAlika]{.trn}
-   b. After a joining letter: [هـٰذا]{.ar} [hApA]{.trn}, [أولـٰئك]{.ar} [EulAEika]{.trn}
+1. Above a base letter: [هٰذا]{.ar} [hApA]{.trn}, [ذٰلك]{.ar} [pAlika]{.trn}, [صلوٰة]{.ar} [SalAo]{.trn}, [علىٰ]{.ar} [ealA]{.trn}
+2. After a base letter. This two has two sub-cases:
+   a. After a non-joining base letter: [صلو ٰت]{.ar} [SalawAt]{.trn}, [صر ٰط]{.ar} [SirAT]{.trn}, [ذ ٰلك]{.ar} [pAlika]{.trn}
+   b. After a joining base letter: [هـٰذا]{.ar} [hApA]{.trn}, [أولـٰئك]{.ar} [EulAEika]{.trn}
 
-Unicode provides [◌ٰ]{.ar} U+0670 \textsc{arabic superscript alef} to encode Dagger Alef. Being a combining character, it is sufficient to encode case (1) above.
+Unicode provides [◌ٰ]{.ar} U+0670 \textsc{arabic superscript alef} to encode Dagger Alef. Being a combining character, U+0670 \textsc{arabic superscript alef} is sufficient to encode case (1) above.
 
 Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \textsc{U+0640 arabic tatweel} combined with U+0670 \textsc{arabic superscript alef} for case 2a, and U+00A0 \textsc{no-break space (nbsp)} or U+202F \textsc{narrow no-break space (nnbsp)} combined with U+0670 \textsc{arabic superscript alef} for case 2b.
 
