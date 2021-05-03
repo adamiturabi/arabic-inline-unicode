@@ -1,5 +1,5 @@
 ---
-title: "Inputting of Arabic inline characters in Unicode"
+title: "Input specification of Arabic inline characters in Unicode"
 author: ""
 output:
   bookdown::gitbook:
@@ -57,8 +57,9 @@ Unicode currently lacks a consistent and complete specification for handling Ara
 ## [#hamzao]{.trn}
 
 The case for inline [hamzao]{.trn} has been discussed in some detail but, it appears, without much official resolution.
-https://unicode.org/L2/L2014/14109-inline-chars.pdf
-https://unicode.org/L2/L2013/13226-koran-ortho.pdf Section IV
+
+1. https://unicode.org/L2/L2014/14109-inline-chars.pdf
+2. https://unicode.org/L2/L2013/13226-koran-ortho.pdf Section IV
 
 We will attempt to summarize the problem here.
 
@@ -66,11 +67,10 @@ Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diac
 
 1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a heh: [هٔ]{.ar}.
 2. After (to the left of) a letter in the basic skeletal text. This has two sub-cases:
-   a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}.
+   a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}, [عِبْء]{.ar}.
    b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the connection of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
 
-
-For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article.
+For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article: https://adamiturabi.github.io/hamza-rules/
 
 For case (1), Unicode provides [◌ٔ]{.ar} \textsc{U+0654 arabic hamza above} and [◌ٕ]{.ar} \textsc{U+0655 arabic hamza below} as combining diacritics.
 
@@ -116,27 +116,47 @@ However, this solution is problematic for some of the same reasons as for [hamza
 2. The user has to choose between between \textsc{tatweel} and \textsc{nbsp/nnbsp} simply on the basis of whether the preceding character is joining or non-joining. The computer’s shaping engine already handles joining of base letters. Therefore, this choice left to the user is non-semantic and unnecessary.
 3. It may adversely affect computerized search and indexing.
 
-Other fonts will automatically offset the Dagger Alef to the left if a [◌َ]{.ar} U+064E \textsc{arabic fatha} is encoded before it. Thus these fonts can display [هٰذا]{.ar} and [هَـٰذا]{.ar} but (problematically) not [هـٰذا]{.ar}.
+Other fonts will render the Dagger Alef above the base letter by default but automatically offset the Dagger Alef to the left if a [◌َ]{.ar} U+064E \textsc{arabic fatha} is encoded before it. Thus these fonts can display [هٰذا]{.ar} and [هَـٰذا]{.ar} but (problematically) not [هـٰذا]{.ar}.
 
 ## Summary
 
 We may condense the problem statement thus:
 
 Arabic has the need to display inline characters as diacritics that:
-May generally be either above or after (to the left of) a base character. The two (above and after) are to be differentiated as they may affect pronunciation.
-Must not affect the joining of base letters.
-Solution
-We propose specifying the use of U+034F Combining Grapheme Joiner to determine whether a diacritic appears above or after a base letter.
 
-Also that U+0654 Arabic [hamzao]{.trn} above be used for the diacritic inline [hamzao]{.trn} and U+0670 arabic superscript alef continue to be used for the diacritic dagger alef.
+1. May generally be either above or after (to the left of) a base character. The two (above and after) are to be differentiated as they may affect pronunciation.
+2. Must not affect the joining of base letters.
 
-If the diacritic is to appear above the base letter then it shall be input after the letter without intermediate CGJ.
+# Proposed solution
 
-If the diacritic is to appear after the base letter then it shall be input after the letter with an intermediate CGJ.
+We propose specifying the use of U+034F \textsc{combining grapheme joiner (cgj)} to determine whether a diacritic appears above or after a base letter.
 
-CGJ and/or the diacritic shall not affect the joining of base letters.
+Also that U+0654 [◌ٔ]{.ar} \textsc{U+0654 arabic hamza above} be used for the diacritic inline [hamzao]{.trn} and [◌ٰ]{.ar} U+0670 \textsc{arabic superscript alef} continue to be used for the diacritic dagger alef.
 
-We recommend to font developers and typographers that CGJ + [hamzao]{.trn} above after a non-joining letter be rendered identical to U+0621.
+If the diacritic is to appear above the base letter then it shall be input after the letter without an intermediate \textsc{cgj}.
+
+If the diacritic is to appear after the base letter then it shall be input after the letter with an intermediate \textsc{cgj} before the diacritic.
+
+\textsc{cgj} and/or the diacritic shall not affect the joining of base letters.
+
+\textsc{cgj} shall prevent any other diacritics before it from normalizing/reordering with the diacritics after it.
+
+We recommend to font developers and typographers that the combination of \textsc{cgj} followed by [◌ٔ]{.ar} \textsc{U+0654 arabic hamza above} after a non-joining letter be rendered identical to [ء]{.ar} \textsc{U+0621 arabic letter hamza}.
 
 Here are some examples of the proposed input sequences and the displayed rendering:
+
+Arabic text | Transcription |Character input sequence
+:-------|:---------|:---------------
+[خطيءة]{.ar} | [xaTIEao]{.trn} | \textsc{khah, tah, yeh, cgj, hamza above, teh marbuta}
+[خاطئ]{.ar}  | [xATiE]{.trn} | \textsc{khah, alef, tah, yeh, hamza above}
+[لَءّال]{.ar}  | [laEEAl]{.trn} | \textsc{lam, fatha, cgj, hamza above, shaddah, alef, lam}
+[هٰذا]{.ar}   | [hapA]{.trn} | \textsc{heh, superscript alef, thal, alef}
+[هـٰذا]{.ar}  | [hapA]{.trn} | \textsc{heh, cgj, superscript alef, thal, alef}
+[هَـٰذا]{.ar}  | [hapA]{.trn} | \textsc{heh, fatha, cgj, superscript alef, thal, alef}
+[ذٰلك]{.ar}   | [pAlika]{.trn} | \textsc{thal, superscript alef, lam, kaf}
+[ذ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, cgj, superscript alef, lam, kaf}
+[ذَ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, fatha, cgj, superscript alef, lam, kaf}
+[صلوٰة]{.ar}  | [SalAo]{.trn} | \textsc{sad, lam, waw, superscript alef, teh marbuta}
+[صلو ٰت]{.ar} | [SalawAt]{.trn} | \textsc{sad, lam, waw, cgj, superscript alef, teh}
+[سمـٰو ٰت]{.ar} | [samAwAt]{.trn} | \textsc{seen, meem, cgj, superscript alef, waw, cgj, superscript alef, teh}
 
