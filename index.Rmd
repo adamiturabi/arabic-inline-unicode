@@ -65,7 +65,7 @@ We will attempt to summarize the problem here.
 
 Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diacritic on the basic skeletal text. This [hamzao]{.trn} can be written in two different ways:
 
-1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a heh: [هٔ]{.ar}.
+1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a \texttt{U+0647} \textsc{arabic letter heh}: [هٔ]{.ar}.
 2. After (to the left of) a base letter in the basic skeletal text. This has two sub-cases:
    a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}, [عِبْء]{.ar}.
    b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the connection of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
@@ -91,9 +91,9 @@ Sequence Order | Arabic character | Encoding | Description
 5. |[◌ٔ]{.ar}| \texttt{U+0654} | \textsc{arabic hamza above}
 6. |[ة]{.ar}| \texttt{U+0629} | \textsc{arabic letter teh marbuta}
 
-This solution is not ideal because it introduces a character in the basic skeletal text (U+640 \textsc{arabic tatweel}) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
+This solution is not ideal because it introduces a character in the basic skeletal text (\texttt{U+0640} \textsc{arabic tatweel}) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
 
-Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between [lAm]{.trn} and [Ealif]{.trn}. In this case [hamzao]{.trn} properly ought not to break the mandatory [lAm]{.trn}-[Ealif]{.trn} ligature [لا]{.ar}. For example, the word [الءاخرة]{.ar} [alEAxirao]{.trn} has a [hamzao]{.trn} between the [lAm]{.trn} and [Ealif]{.trn}. When input with a U+640 \textsc{arabic tatweel}, it will be displayed incorrectly as [الـٔاخرة]{.ar}.
+Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between [lAm]{.trn} and [Ealif]{.trn}. In this case [hamzao]{.trn} properly ought not to break the mandatory [lAm]{.trn}-[Ealif]{.trn} ligature [لا]{.ar}. For example, the word [الءاخرة]{.ar} [alEAxirao]{.trn} has a [hamzao]{.trn} between the [lAm]{.trn} and [Ealif]{.trn}. When input with a \texttt{U+0640} \textsc{arabic tatweel}, it will be displayed incorrectly as [الـٔاخرة]{.ar}.
 
 Such words are common in some writing styles of [#qurEAn]{.trn2}ic text. Even in non-[#qurEAn]{.trn2}ic text there are some words which require inline [hamzao]{.trn} between [lAm]{.trn} and [Ealif]{.trn}. For example [مَلَءًا]{.ar} [malaEan]{.trn} and [لَءَّال]{.ar} [laEEAl]{.trn}.
 
@@ -108,7 +108,7 @@ Dagger alef can also be considered an inline character. Depending on the writing
 
 Unicode provides [◌ٰ]{.ar} \texttt{U+0670} \textsc{arabic superscript alef} to encode Dagger Alef. Being a combining character, \texttt{U+0670} \textsc{arabic superscript alef} is sufficient to encode case (1) above.
 
-Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \textsc{\texttt{U+0640} arabic tatweel} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case 2a, and \texttt{U+00A0} \textsc{no-break space (nbsp)} or \texttt{U+202F} \textsc{narrow no-break space (nnbsp)} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case 2b.
+Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \textsc{\texttt{U+0640} arabic tatweel} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2a), and \texttt{U+00A0} \textsc{no-break space (nbsp)} or \texttt{U+202F} \textsc{narrow no-break space (nnbsp)} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2b).
 
 However, this solution is problematic for some of the same reasons as for [hamzao]{.trn}:
 
@@ -150,9 +150,9 @@ Arabic text | Transcription |Character input sequence
 [خطيءة]{.ar} | [xaTIEao]{.trn} | \textsc{khah, tah, yeh, cgj, hamza above, teh marbuta}
 [خاطئ]{.ar}  | [xATiE]{.trn} | \textsc{khah, alef, tah, yeh, hamza above}
 [لَءّال]{.ar}  | [laEEAl]{.trn} | \textsc{lam, fatha, cgj, hamza above, shaddah, alef, lam}
-[هٰذا]{.ar}   | [hapA]{.trn} | \textsc{heh, superscript alef, thal, alef}
-[هـٰذا]{.ar}  | [hapA]{.trn} | \textsc{heh, cgj, superscript alef, thal, alef}
-[هَـٰذا]{.ar}  | [hapA]{.trn} | \textsc{heh, fatha, cgj, superscript alef, thal, alef}
+[هٰذا]{.ar}   | [hApA]{.trn} | \textsc{heh, superscript alef, thal, alef}
+[هـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, cgj, superscript alef, thal, alef}
+[هَـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, fatha, cgj, superscript alef, thal, alef}
 [ذٰلك]{.ar}   | [pAlika]{.trn} | \textsc{thal, superscript alef, lam, kaf}
 [ذ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, cgj, superscript alef, lam, kaf}
 [ذَ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, fatha, cgj, superscript alef, lam, kaf}
