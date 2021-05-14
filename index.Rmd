@@ -7,7 +7,7 @@ references:
   author:
   - family: Pournader
     given: Roozbeh
-  container-title: L2/09-358R
+  container-title: UTC Document L2/09-358R
   URL: 'https://www.unicode.org/L2/L2009/09358r-koranic-status.pdf'
   issued:
     year: 2009
@@ -16,7 +16,7 @@ references:
   author:
   - family: Milo
     given: Thomas
-  container-title: L2/13-226
+  container-title: UTC Document L2/13-226
   URL: 'https://unicode.org/L2/L2013/13226-koran-ortho.pdf'
   issued:
     year: 2013
@@ -25,7 +25,7 @@ references:
   author:
   - family: Milo
     given: Thomas
-  container-title: L2/14-109
+  container-title: UTC Document L2/14-109
   URL: 'https://unicode.org/L2/L2014/14109-inline-chars.pdf'
   issued:
     year: 2014
@@ -93,7 +93,7 @@ Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diac
 1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a \texttt{U+0647} \textsc{arabic letter heh}: [هٔ]{.ar}.
 2. After (to the left of) a base letter in the basic skeletal text. This has two sub-cases:
    a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}, [عِبْء]{.ar}.
-   b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the connection of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
+   b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the joining of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
 
 For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article: https://adamiturabi.github.io/hamza-rules/
 
@@ -101,11 +101,11 @@ For case (1), Unicode provides [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza
 
 For case (2a), Unicode provides [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza}.
 
-It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, the vast majority of fonts consider [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza} a breaking character.
+It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, Unicode specifies that [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza} is a breaking character. OpenType shaping engines enforce this (as they rely on Unicode for joining behaviour). Fonts that want to change this behaviour will have to jump through many hoops to achieve it. 
 
-In order to display [hamzao]{.trn} according to case (2b), most users are accustomed to approximating it with [ئ]{.ar} \textsc{\texttt{U+0626} arabic letter yeh with hamza above} which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}. In fact, due to the prevalence of this approximation, many users will consider it the correct way of writing, even in handwritten text.
+Futhermore, a set of "simplified" [hamzao]{.trn} rules have been proposed by Arabic Language Academy in Cairo where inline [hamzao]{.trn} is approximated with [ئ]{.ar} \textsc{\texttt{U+0626} arabic letter yeh with hamza above}, which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}.
 
-In order to follow the proper rules without approximating it with [ئ]{.ar}, some fonts propose the use of [ـ]{.ar} \textsc{\texttt{U+0640} arabic tatweel} with [◌ٔ]{.ar} \textsc{\texttt{U+0654} arabic hamza above}. For example, [خطيءة]{.ar} will be input with the following sequence:
+Nevertheless, the need still exists to input and display inline [hamzao]{.trn} according to the proper rules without approximating it with [ئ]{.ar}. In order to facilitate this, some fonts propose the use of [ـ]{.ar} \textsc{\texttt{U+0640} arabic tatweel} with [◌ٔ]{.ar} \textsc{\texttt{U+0654} arabic hamza above}. For example, [خطيءة]{.ar} will be input with the following sequence:
 
 Sequence Order | Arabic character | Encoding | Description
 :--|:------|:--------|:------
@@ -172,17 +172,31 @@ Here are some examples of the proposed input sequences and the displayed renderi
 
 Arabic text | Transcription |Character input sequence
 :-------|:---------|:---------------
-[خطيءة]{.ar} | [xaTIEao]{.trn} | \textsc{khah, tah, yeh, cgj, hamza above, teh marbuta}
-[خاطئ]{.ar}  | [xATiE]{.trn} | \textsc{khah, alef, tah, yeh, hamza above}
-[لَءّال]{.ar}  | [laEEAl]{.trn} | \textsc{lam, fatha, cgj, hamza above, shaddah, alef, lam}
+[خطيءة]{.ar} | [xaTIEao]{.trn} | \textsc{khah, tah, yeh, \textcolor{blue}{cgj}, hamza above, teh marbuta}
+[خاطئة]{.ar}  | [xATiE]{.trn} | \textsc{khah, alef, tah, yeh, hamza above, teh marbuta}
+[لَءّال]{.ar}  | [laEEAl]{.trn} | \textsc{lam, fatha, \textcolor{blue}{cgj}, hamza above, shaddah, alef, lam}
 [هٰذا]{.ar}   | [hApA]{.trn} | \textsc{heh, superscript alef, thal, alef}
-[هـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, cgj, superscript alef, thal, alef}
-[هَـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, fatha, cgj, superscript alef, thal, alef}
+[هـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, \textcolor{blue}{cgj}, superscript alef, thal, alef}
+[هَـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, fatha, \textcolor{blue}{cgj}, superscript alef, thal, alef}
 [ذٰلك]{.ar}   | [pAlika]{.trn} | \textsc{thal, superscript alef, lam, kaf}
-[ذ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, cgj, superscript alef, lam, kaf}
-[ذَ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, fatha, cgj, superscript alef, lam, kaf}
+[ذ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, \textcolor{blue}{cgj}, superscript alef, lam, kaf}
+[ذَ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, fatha, \textcolor{blue}{cgj}, superscript alef, lam, kaf}
 [صلوٰة]{.ar}  | [SalAo]{.trn} | \textsc{sad, lam, waw, superscript alef, teh marbuta}
-[صلو ٰت]{.ar} | [SalawAt]{.trn} | \textsc{sad, lam, waw, cgj, superscript alef, teh}
-[سمـٰو ٰت]{.ar} | [samAwAt]{.trn} | \textsc{seen, meem, cgj, superscript alef, waw, cgj, superscript alef, teh}
+[صلو ٰت]{.ar} | [SalawAt]{.trn} | \textsc{sad, lam, waw, \textcolor{blue}{cgj}, superscript alef, teh}
+[سمـٰو ٰت]{.ar} | [samAwAt]{.trn} | \textsc{seen, meem, \textcolor{blue}{cgj}, superscript alef, waw, \textcolor{blue}{cgj}, superscript alef, teh}
+
+# Other inline characters
+
+There exist other inline diacritical characters in Arabic used for displaying [#qurEAn]{.trn2}ic text like:
+
+1. [◌ࣳ]{.ar} \texttt{U+08F3} \textsc{arabic small high waw}. Example: [لِيَسُـࣳءُوا]{.ar} [liyasUEU]{.trn}.
+2. [◌ۧ]{.ar} \texttt{U+06E7} \textsc{arabic small high yeh}. Example: [وَلِـِّۧيَ]{.ar} [waliyyiya]{.trn}.
+
+These too are currently input using a \textsc{\texttt{U+0640} arabic tatweel}. However, the proposal to use \textsc{cgj} should work here as well. Note that, Unicode has separate non-joining characters corresponding to the above which, strictly speaking, will no longer be necessary:
+
+1. [ۥ]{.ar} \texttt{U+06E5} \textsc{arabic small waw}.
+2. [ۦ]{.ar} \texttt{U+06E6} \textsc{arabic small yeh}.
+
+But similar to the case of non-joining [hamzao]{.trn}, we recommend that \textsc{cgj} followed by the joining character be displayed identical to the non-joining character.
 
 # References
