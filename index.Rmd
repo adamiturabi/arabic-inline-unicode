@@ -197,6 +197,6 @@ These too are currently input using a \textsc{\texttt{U+0640} arabic tatweel}. H
 1. [ۥ]{.ar} \texttt{U+06E5} \textsc{arabic small waw}.
 2. [ۦ]{.ar} \texttt{U+06E6} \textsc{arabic small yeh}.
 
-But similar to the case of non-joining [hamzao]{.trn}, we recommend that \textsc{cgj} followed by the joining character be displayed identical to the non-joining character.
+But similar to the case of non-joining [hamzao]{.trn}, we recommend, for example, that the sequence \textsc{cgj}, [◌ࣳ]{.ar} \texttt{U+08F3} \textsc{arabic small high waw} after a non-joining base letter be displayed identical to [ۥ]{.ar} \texttt{U+06E5} \textsc{arabic small waw}.
 
 # References
