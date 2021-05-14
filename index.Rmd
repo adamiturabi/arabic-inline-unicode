@@ -173,7 +173,7 @@ Here are some examples of the proposed input sequences and the displayed renderi
 Arabic text | Transcription |Character input sequence
 :-------|:---------|:---------------
 [خطيءة]{.ar} | [xaTIEao]{.trn} | \textsc{khah, tah, yeh, \textcolor{blue}{cgj}, hamza above, teh marbuta}
-[خاطئة]{.ar}  | [xATiE]{.trn} | \textsc{khah, alef, tah, yeh, hamza above, teh marbuta}
+[خاطئة]{.ar}  | [xATiEao]{.trn} | \textsc{khah, alef, tah, yeh, hamza above, teh marbuta}
 [لَءّال]{.ar}  | [laEEAl]{.trn} | \textsc{lam, fatha, \textcolor{blue}{cgj}, hamza above, shaddah, alef, lam}
 [هٰذا]{.ar}   | [hApA]{.trn} | \textsc{heh, superscript alef, thal, alef}
 [هـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, \textcolor{blue}{cgj}, superscript alef, thal, alef}
