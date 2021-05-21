@@ -97,15 +97,15 @@ Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diac
 
 For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article: https://adamiturabi.github.io/hamza-rules/
 
-For case (1), Unicode provides [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} and [◌ٕ]{.ar} \textsc{\texttt{U+0655} arabic hamza below} as combining diacritics.
+For case (1), Unicode provides [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} and [◌ٕ]{.ar} \texttt{U+0655} \textsc{arabic hamza below} as combining diacritics.
 
-For case (2a), Unicode provides [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza}.
+For case (2a), Unicode provides [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza}.
 
-It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, Unicode specifies that [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza} is a breaking character. OpenType shaping engines enforce this (as they rely on Unicode for joining behaviour). Fonts that want to change this behaviour will have to jump through many hoops to achieve it. 
+It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, Unicode specifies that [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza} is a breaking character. OpenType shaping engines enforce this (as they rely on Unicode for joining behaviour). Fonts that want to change this behaviour will have to jump through many hoops to achieve it. 
 
-Futhermore, a set of "simplified" [hamzao]{.trn} rules have been proposed by Arabic Language Academy in Cairo where inline [hamzao]{.trn} is approximated with [ئ]{.ar} \textsc{\texttt{U+0626} arabic letter yeh with hamza above}, which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}.
+Futhermore, a set of "simplified" [hamzao]{.trn} rules have been proposed by Arabic Language Academy in Cairo where inline [hamzao]{.trn} is approximated with [ئ]{.ar} \texttt{U+0626} \textsc{arabic letter yeh with hamza above}, which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}.
 
-Nevertheless, the need still exists to input and display inline [hamzao]{.trn} according to the proper rules without approximating it with [ئ]{.ar}. In order to facilitate this, some fonts propose the use of [ـ]{.ar} \textsc{\texttt{U+0640} arabic tatweel} with [◌ٔ]{.ar} \textsc{\texttt{U+0654} arabic hamza above}. For example, [خطيءة]{.ar} will be input with the following sequence:
+Nevertheless, the need still exists to input and display inline [hamzao]{.trn} according to the proper rules without approximating it with [ئ]{.ar}. In order to facilitate this, some fonts propose the use of [ـ]{.ar} \texttt{U+0640} \textsc{arabic tatweel} with [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above}. For example, [خطيءة]{.ar} will be input with the following sequence:
 
 Sequence Order | Arabic character | Encoding | Description
 :--|:------|:--------|:------
@@ -133,7 +133,7 @@ Dagger Alef can also be considered an inline character. Depending on the writing
 
 Unicode provides [◌ٰ]{.ar} \texttt{U+0670} \textsc{arabic superscript alef} to encode Dagger Alef. Being a combining character, \texttt{U+0670} \textsc{arabic superscript alef} is sufficient to encode case (1) above.
 
-Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \textsc{\texttt{U+0640} arabic tatweel} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2a), and \texttt{U+00A0} \textsc{no-break space (nbsp)} or \texttt{U+202F} \textsc{narrow no-break space (nnbsp)} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2b).
+Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \texttt{U+0640} \textsc{arabic tatweel} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2a), and \texttt{U+00A0} \textsc{no-break space (nbsp)} or \texttt{U+202F} \textsc{narrow no-break space (nnbsp)} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2b).
 
 However, this solution is problematic for some of the same reasons as for [hamzao]{.trn}:
 
@@ -156,7 +156,7 @@ Arabic has the need to display inline characters as diacritics that:
 
 We propose specifying the use of \texttt{U+034F} \textsc{combining grapheme joiner (cgj)} to determine whether a diacritic appears above or after a base letter.
 
-Also that [◌ٔ]{.ar} \textsc{\texttt{U+0654} arabic hamza above} be used for the diacritic inline [hamzao]{.trn} and [◌ٰ]{.ar} \texttt{U+0670} \textsc{arabic superscript alef} continue to be used for the diacritic Dagger Alef.
+Also that [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} be used for the diacritic inline [hamzao]{.trn} and [◌ٰ]{.ar} \texttt{U+0670} \textsc{arabic superscript alef} continue to be used for the diacritic Dagger Alef.
 
 If the diacritic is to appear above the base letter then it shall be input after the letter without an intermediate \textsc{cgj}.
 
@@ -166,7 +166,7 @@ If the diacritic is to appear after the base letter then it shall be input after
 
 \textsc{cgj} shall prevent any other diacritics before it from normalizing/reordering with the diacritics after it.
 
-We recommend to font developers and typographers that the combination of \textsc{cgj} followed by [◌ٔ]{.ar} \textsc{\texttt{U+0654} arabic hamza above} after a non-joining letter be rendered identical to [ء]{.ar} \textsc{\texttt{U+0621} arabic letter hamza}.
+We recommend to font developers and typographers that the combination of \textsc{cgj} followed by [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} after a non-joining letter be rendered identical to [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza}.
 
 Here are some examples of the proposed input sequences and the displayed rendering:
 
@@ -192,7 +192,7 @@ There exist other inline diacritical characters in Arabic used for displaying [#
 1. [◌ࣳ]{.ar} \texttt{U+08F3} \textsc{arabic small high waw}. Example: [لِيَسُـࣳءُوا]{.ar} [liyasUEU]{.trn}.
 2. [◌ۧ]{.ar} \texttt{U+06E7} \textsc{arabic small high yeh}. Example: [وَلِـِّۧيَ]{.ar} [waliyyiya]{.trn}.
 
-These too are currently input using a \textsc{\texttt{U+0640} arabic tatweel}. However, the proposal to use \textsc{cgj} should work here as well. Note that, Unicode has separate non-joining characters corresponding to the above which, strictly speaking, will no longer be necessary:
+These too are currently input using a \texttt{U+0640} \textsc{arabic tatweel}. However, the proposal to use \textsc{cgj} should work here as well. Note that, Unicode has separate non-joining characters corresponding to the above which, strictly speaking, will no longer be necessary:
 
 1. [ۥ]{.ar} \texttt{U+06E5} \textsc{arabic small waw}.
 2. [ۦ]{.ar} \texttt{U+06E6} \textsc{arabic small yeh}.
