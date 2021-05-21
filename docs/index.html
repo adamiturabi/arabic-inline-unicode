@@ -1912,6 +1912,7 @@ font-variant: small-caps;
 <li><em>Hamzaḧ</em></li>
 <li><em>ʾAlif k͟hanjariyyaḧ</em> “Dagger Alef”</li>
 </ol>
+<p><strong>Note:</strong> The Arabic text in this document has been input to render it acceptably, in lieu of using images. Because of font limitations, the input sequence is not representative of the proposal.</p>
 <div id="hamzao" class="section level2">
 <h2><span class="header-section-number">1.1</span> <em>Hamzaḧ</em></h2>
 <p>The case for inline <em>hamzaḧ</em> has been discussed in some detail in <span class="citation">(Pournader 2009; Milo 2013 Section IV, 2014)</span> but, it appears, without much official resolution. There has also been an action item <a href="https://www.unicode.org/L2/L2014/14100.htm#139-A60">139-A60</a> to address the topic.</p>
@@ -1925,7 +1926,7 @@ font-variant: small-caps;
 <li>Inline <em>hamzaḧ</em>: After a joining base letter in the middle of a word. In this case <em>hamzaḧ</em> is written between the two joining base letters, above the baseline, and without affecting the joining of the two base letters. Examples: <span lang="ar" dir="rtl">خطيءة</span>, <span lang="ar" dir="rtl">شيءًا</span>, <span lang="ar" dir="rtl">بريءين</span></li>
 </ol></li>
 </ol>
-<p>For a set of rules to determine the seat of the <em>hamzaḧ</em> and whether <em>hamzaḧ</em> is to be written inline, see this article: <a href="https://adamiturabi.github.io/hamza-rules/" class="uri">https://adamiturabi.github.io/hamza-rules/</a></p>
+<p>For a set of rules to determine when <em>hamzaḧ</em> is to be written seated, standalone, or inline, see <span class="citation">(Turabi 2020)</span>.</p>
 <p>For case (1), Unicode provides <span lang="ar" dir="rtl">◌ٔ</span> <code>U+0654</code> <span class="smallcaps">arabic hamza above</span> and <span lang="ar" dir="rtl">◌ٕ</span> <code>U+0655</code> <span class="smallcaps">arabic hamza below</span> as combining diacritics.</p>
 <p>For case (2a), Unicode provides <span lang="ar" dir="rtl">ء</span> <code>U+0621</code> <span class="smallcaps">arabic letter hamza</span>.</p>
 <p>It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use <span lang="ar" dir="rtl">ء</span> <code>U+0621</code> <span class="smallcaps">arabic letter hamza</span> and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, Unicode specifies that <span lang="ar" dir="rtl">ء</span> <code>U+0621</code> <span class="smallcaps">arabic letter hamza</span> is a breaking character. OpenType shaping engines enforce this (as they rely on Unicode for joining behaviour). Fonts that want to change this behaviour will have to jump through many hoops to achieve it.</p>
@@ -2126,6 +2127,9 @@ font-variant: small-caps;
 </div>
 <div id="ref-pournader1">
 <p>Pournader, Roozbeh. 2009. “Discussion Document for Polishing Koranic Support in Unicode.” <em>UTC Document L2/09-358R</em>. <a href="https://www.unicode.org/L2/L2009/09358r-koranic-status.pdf">https://www.unicode.org/L2/L2009/09358r-koranic-status.pdf</a>.</p>
+</div>
+<div id="ref-Turabi1">
+<p>Turabi, Adami. 2020. “Rules for Writing Hamza in the Arabic Script.” <a href="https://adamiturabi.github.io/hamza-rules/">https://adamiturabi.github.io/hamza-rules/</a>.</p>
 </div>
 </div>
 </div>

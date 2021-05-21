@@ -29,6 +29,14 @@ references:
   URL: 'https://unicode.org/L2/L2014/14109-inline-chars.pdf'
   issued:
     year: 2014
+- id: Turabi1
+  title: Rules for writing hamza in the Arabic script
+  author:
+  - family: Turabi
+    given: Adami
+  URL: 'https://adamiturabi.github.io/hamza-rules/'
+  issued:
+    year: 2020
 output:
   bookdown::gitbook:
     css: mystyle.css
@@ -82,6 +90,8 @@ Unicode currently lacks a consistent and complete specification for handling Ara
 1. [#hamzao]{.trn}
 2. [E#alif xanjariyyao]{.trn} "Dagger Alef"
 
+**Note:** The Arabic text in this document has been input to render it acceptably, in lieu of using images. Because of font limitations, the input sequence is not representative of the proposal.
+
 ## [#hamzao]{.trn}
 
 The case for inline [hamzao]{.trn} has been discussed in some detail in [@pournader1; @milo1 Section IV; @milo2] but, it appears, without much official resolution. There has also been an action item [139-A60](https://www.unicode.org/L2/L2014/14100.htm#139-A60) to address the topic.
@@ -95,7 +105,7 @@ Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diac
    a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}, [عِبْء]{.ar}.
    b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the joining of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
 
-For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article: https://adamiturabi.github.io/hamza-rules/
+For a set of rules to determine when [hamzao]{.trn} is to be written seated, standalone, or inline, see [@Turabi1]. 
 
 For case (1), Unicode provides [◌ٔ]{.ar} `U+0654` [arabic hamza above]{.smallcaps} and [◌ٕ]{.ar} `U+0655` [arabic hamza below]{.smallcaps} as combining diacritics.
 
