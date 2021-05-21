@@ -90,35 +90,35 @@ We will attempt to summarize the problem here.
 
 Being a later addition to the Arabic script, [hamzao]{.trn} is written as a diacritic on the basic skeletal text. This [hamzao]{.trn} can be written in two different ways:
 
-1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a \texttt{U+0647} \textsc{arabic letter heh}: [هٔ]{.ar}.
+1. Above a base letter, known as the “seat of the [hamzao]{.trn}”: In writing the Arabic language [hamzao]{.trn} may be seated above a vowel letter: [أ ؤ ئ]{.ar}. It may also be sometimes written below vowel letters, depending on the writing style and vowel mark: [إ ىٕ]{.ar}. In Persian language writing, it may also appear above a `U+0647` [arabic letter heh]{.smallcaps}: [هٔ]{.ar}.
 2. After (to the left of) a base letter in the basic skeletal text. This has two sub-cases:
    a. Standalone [hamzao]{.trn}: After a non-joining base letter ([ا د ذ ر ز و]{.ar}) or at the end of a word. In this case, [hamzao]{.trn} is written at the baseline. Examples: [دعاء]{.ar}, [سوء]{.ar}, [عِبْء]{.ar}.
    b. Inline [hamzao]{.trn}: After a joining base letter in the middle of a word. In this case [hamzao]{.trn} is written between the two joining base letters, above the baseline, and without affecting the joining of the two base letters. Examples: [خطيءة]{.ar}, [شيءًا]{.ar}, [بريءين]{.ar}
 
 For a set of rules to determine the seat of the [hamzao]{.trn} and whether [hamzao]{.trn} is to be written inline, see this article: https://adamiturabi.github.io/hamza-rules/
 
-For case (1), Unicode provides [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} and [◌ٕ]{.ar} \texttt{U+0655} \textsc{arabic hamza below} as combining diacritics.
+For case (1), Unicode provides [◌ٔ]{.ar} `U+0654` [arabic hamza above]{.smallcaps} and [◌ٕ]{.ar} `U+0655` [arabic hamza below]{.smallcaps} as combining diacritics.
 
-For case (2a), Unicode provides [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza}.
+For case (2a), Unicode provides [ء]{.ar} `U+0621` [arabic letter hamza]{.smallcaps}.
 
-It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, Unicode specifies that [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza} is a breaking character. OpenType shaping engines enforce this (as they rely on Unicode for joining behaviour). Fonts that want to change this behaviour will have to jump through many hoops to achieve it. 
+It is case (2b) which is problematic and has not been given sufficient attention by the Unicode standard. It would have been sufficient to use [ء]{.ar} `U+0621` [arabic letter hamza]{.smallcaps} and specify that it shall not break the joining of the letter before it with the letter after it. Unfortunately, Unicode specifies that [ء]{.ar} `U+0621` [arabic letter hamza]{.smallcaps} is a breaking character. OpenType shaping engines enforce this (as they rely on Unicode for joining behaviour). Fonts that want to change this behaviour will have to jump through many hoops to achieve it. 
 
-Futhermore, a set of "simplified" [hamzao]{.trn} rules have been proposed by Arabic Language Academy in Cairo where inline [hamzao]{.trn} is approximated with [ئ]{.ar} \texttt{U+0626} \textsc{arabic letter yeh with hamza above}, which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}.
+Futhermore, a set of "simplified" [hamzao]{.trn} rules have been proposed by Arabic Language Academy in Cairo where inline [hamzao]{.trn} is approximated with [ئ]{.ar} `U+0626` [arabic letter yeh with hamza above]{.smallcaps}, which between two joining letters looks similar to an inline [hamzao]{.trn} [ـئـ]{.ar}.
 
-Nevertheless, the need still exists to input and display inline [hamzao]{.trn} according to the proper rules without approximating it with [ئ]{.ar}. In order to facilitate this, some fonts propose the use of [ـ]{.ar} \texttt{U+0640} \textsc{arabic tatweel} with [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above}. For example, [خطيءة]{.ar} will be input with the following sequence:
+Nevertheless, the need still exists to input and display inline [hamzao]{.trn} according to the proper rules without approximating it with [ئ]{.ar}. In order to facilitate this, some fonts propose the use of [ـ]{.ar} `U+0640` [arabic tatweel]{.smallcaps} with [◌ٔ]{.ar} `U+0654` [arabic hamza above]{.smallcaps}. For example, [خطيءة]{.ar} will be input with the following sequence:
 
 Sequence Order | Arabic character | Encoding | Description
 :--|:------|:--------|:------
-1. |[خ]{.ar}| \texttt{U+062E} | \textsc{arabic letter khah}
-2. |[ط]{.ar}| \texttt{U+0637} | \textsc{arabic letter tah}
-3. |[ي]{.ar}| \texttt{U+064A} | \textsc{arabic letter yeh}
-4. |[ـ]{.ar}| \texttt{U+0640} | \textsc{arabic tatweel}
-5. |[◌ٔ]{.ar}| \texttt{U+0654} | \textsc{arabic hamza above}
-6. |[ة]{.ar}| \texttt{U+0629} | \textsc{arabic letter teh marbuta}
+1. |[خ]{.ar}| `U+062E` | [arabic letter khah]{.smallcaps}
+2. |[ط]{.ar}| `U+0637` | [arabic letter tah]{.smallcaps}
+3. |[ي]{.ar}| `U+064A` | [arabic letter yeh]{.smallcaps}
+4. |[ـ]{.ar}| `U+0640` | [arabic tatweel]{.smallcaps}
+5. |[◌ٔ]{.ar}| `U+0654` | [arabic hamza above]{.smallcaps}
+6. |[ة]{.ar}| `U+0629` | [arabic letter teh marbuta]{.smallcaps}
 
-This solution is not ideal because it introduces a character in the basic skeletal text (\texttt{U+0640} \textsc{arabic tatweel}) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
+This solution is not ideal because it introduces a character in the basic skeletal text (`U+0640` [arabic tatweel]{.smallcaps}) which is not part of the word’s spelling. This can also adversely affect computerized search and indexing of text encoded in this manner.
 
-Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between [lAm]{.trn} and [Ealif]{.trn}. In this case [hamzao]{.trn} properly ought not to break the mandatory [lAm]{.trn}-[Ealif]{.trn} ligature [لا]{.ar}. For example, the word [الءاخرة]{.ar} [alEAxirao]{.trn} has a [hamzao]{.trn} between the [lAm]{.trn} and [Ealif]{.trn}. When input with a \texttt{U+0640} \textsc{arabic tatweel}, it will be displayed incorrectly as [الـٔاخرة]{.ar}.
+Besides this being an improper hack, this solution will simply not work when inline [hamzao]{.trn} comes between [lAm]{.trn} and [Ealif]{.trn}. In this case [hamzao]{.trn} properly ought not to break the mandatory [lAm]{.trn}-[Ealif]{.trn} ligature [لا]{.ar}. For example, the word [الءاخرة]{.ar} [alEAxirao]{.trn} has a [hamzao]{.trn} between the [lAm]{.trn} and [Ealif]{.trn}. When input with a `U+0640` [arabic tatweel]{.smallcaps}, it will be displayed incorrectly as [الـٔاخرة]{.ar}.
 
 Such words are common in some writing styles of [#qurEAn]{.trn2}ic text. Even in non-[#qurEAn]{.trn2}ic text there are some words which require inline [hamzao]{.trn} between [lAm]{.trn} and [Ealif]{.trn}. For example [مَلَءًا]{.ar} [malaEan]{.trn} and [لَءَّال]{.ar} [laEEAl]{.trn}.
 
@@ -131,17 +131,17 @@ Dagger Alef can also be considered an inline character. Depending on the writing
    a. After a non-joining base letter: [صلو ٰت]{.ar} [SalawAt]{.trn}, [صر ٰط]{.ar} [SirAT]{.trn}, [ذ ٰلك]{.ar} [pAlika]{.trn}
    b. After a joining base letter: [هـٰذا]{.ar} [hApA]{.trn}, [أولـٰئك]{.ar} [EulAEika]{.trn}
 
-Unicode provides [◌ٰ]{.ar} \texttt{U+0670} \textsc{arabic superscript alef} to encode Dagger Alef. Being a combining character, \texttt{U+0670} \textsc{arabic superscript alef} is sufficient to encode case (1) above.
+Unicode provides [◌ٰ]{.ar} `U+0670` [arabic superscript alef]{.smallcaps} to encode Dagger Alef. Being a combining character, `U+0670` [arabic superscript alef]{.smallcaps} is sufficient to encode case (1) above.
 
-Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using \texttt{U+0640} \textsc{arabic tatweel} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2a), and \texttt{U+00A0} \textsc{no-break space (nbsp)} or \texttt{U+202F} \textsc{narrow no-break space (nnbsp)} combined with \texttt{U+0670} \textsc{arabic superscript alef} for case (2b).
+Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using `U+0640` [arabic tatweel]{.smallcaps} combined with `U+0670` [arabic superscript alef]{.smallcaps} for case (2a), and `U+00A0` [no-break space (nbsp)]{.smallcaps} or `U+202F` [narrow no-break space (nnbsp)]{.smallcaps} combined with `U+0670` [arabic superscript alef]{.smallcaps} for case (2b).
 
 However, this solution is problematic for some of the same reasons as for [hamzao]{.trn}:
 
-1. It introduces characters in the text which are not part of the word’s spelling: \textsc{tatweel} and \textsc{nbsp/nnbsp}.
-2. The user has to choose between between \textsc{tatweel} and \textsc{nbsp/nnbsp} simply on the basis of whether the preceding character is joining or non-joining. The computer’s shaping engine already handles joining of base letters. Therefore, this choice left to the user is non-semantic and unnecessary.
+1. It introduces characters in the text which are not part of the word’s spelling: [tatweel]{.smallcaps} and [nbsp/nnbsp]{.smallcaps}.
+2. The user has to choose between between [tatweel]{.smallcaps} and [nbsp/nnbsp]{.smallcaps} simply on the basis of whether the preceding character is joining or non-joining. The computer’s shaping engine already handles joining of base letters. Therefore, this choice left to the user is non-semantic and unnecessary.
 3. It may adversely affect computerized search and indexing.
 
-Other fonts will render the Dagger Alef above the base letter by default but automatically offset the Dagger Alef to the left if a [◌َ]{.ar} \texttt{U+064E} \textsc{arabic fatha} is encoded before it. Thus these fonts can display [هٰذا]{.ar} and [هَـٰذا]{.ar} but (problematically) not [هـٰذا]{.ar}.
+Other fonts will render the Dagger Alef above the base letter by default but automatically offset the Dagger Alef to the left if a [◌َ]{.ar} `U+064E` [arabic fatha]{.smallcaps} is encoded before it. Thus these fonts can display [هٰذا]{.ar} and [هَـٰذا]{.ar} but (problematically) not [هـٰذا]{.ar}.
 
 ## Summary
 
@@ -154,49 +154,49 @@ Arabic has the need to display inline characters as diacritics that:
 
 # Proposed solution
 
-We propose specifying the use of \texttt{U+034F} \textsc{combining grapheme joiner (cgj)} to determine whether a diacritic appears above or after a base letter.
+We propose specifying the use of `U+034F` [combining grapheme joiner (cgj)]{.smallcaps} to determine whether a diacritic appears above or after a base letter.
 
-Also that [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} be used for the diacritic inline [hamzao]{.trn} and [◌ٰ]{.ar} \texttt{U+0670} \textsc{arabic superscript alef} continue to be used for the diacritic Dagger Alef.
+Also that [◌ٔ]{.ar} `U+0654` [arabic hamza above]{.smallcaps} be used for the diacritic inline [hamzao]{.trn} and [◌ٰ]{.ar} `U+0670` [arabic superscript alef]{.smallcaps} continue to be used for the diacritic Dagger Alef.
 
-If the diacritic is to appear above the base letter then it shall be input after the letter without an intermediate \textsc{cgj}.
+If the diacritic is to appear above the base letter then it shall be input after the letter without an intermediate [cgj]{.smallcaps}.
 
-If the diacritic is to appear after the base letter then it shall be input after the letter with an intermediate \textsc{cgj} before the diacritic.
+If the diacritic is to appear after the base letter then it shall be input after the letter with an intermediate [cgj]{.smallcaps} before the diacritic.
 
-\textsc{cgj} and/or the diacritic shall not affect the joining of base letters.
+[cgj]{.smallcaps} and/or the diacritic shall not affect the joining of base letters.
 
-\textsc{cgj} shall prevent any other diacritics before it from normalizing/reordering with the diacritics after it.
+[cgj]{.smallcaps} shall prevent any other diacritics before it from normalizing/reordering with the diacritics after it.
 
-We recommend to font developers and typographers that the combination of \textsc{cgj} followed by [◌ٔ]{.ar} \texttt{U+0654} \textsc{arabic hamza above} after a non-joining letter be rendered identical to [ء]{.ar} \texttt{U+0621} \textsc{arabic letter hamza}.
+We recommend to font developers and typographers that the combination of [cgj]{.smallcaps} followed by [◌ٔ]{.ar} `U+0654` [arabic hamza above]{.smallcaps} after a non-joining letter be rendered identical to [ء]{.ar} `U+0621` [arabic letter hamza]{.smallcaps}.
 
 Here are some examples of the proposed input sequences and the displayed rendering:
 
 Arabic text | Transcription |Character input sequence
 :-------|:---------|:---------------
-[خطيءة]{.ar} | [xaTIEao]{.trn} | \textsc{khah, tah, yeh, \textcolor{blue}{cgj}, hamza above, teh marbuta}
-[خاطئة]{.ar}  | [xATiEao]{.trn} | \textsc{khah, alef, tah, yeh, hamza above, teh marbuta}
-[لَءّال]{.ar}  | [laEEAl]{.trn} | \textsc{lam, fatha, \textcolor{blue}{cgj}, hamza above, shaddah, alef, lam}
-[هٰذا]{.ar}   | [hApA]{.trn} | \textsc{heh, superscript alef, thal, alef}
-[هـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, \textcolor{blue}{cgj}, superscript alef, thal, alef}
-[هَـٰذا]{.ar}  | [hApA]{.trn} | \textsc{heh, fatha, \textcolor{blue}{cgj}, superscript alef, thal, alef}
-[ذٰلك]{.ar}   | [pAlika]{.trn} | \textsc{thal, superscript alef, lam, kaf}
-[ذ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, \textcolor{blue}{cgj}, superscript alef, lam, kaf}
-[ذَ ٰلك]{.ar}  | [pAlika]{.trn} | \textsc{thal, fatha, \textcolor{blue}{cgj}, superscript alef, lam, kaf}
-[صلوٰة]{.ar}  | [SalAo]{.trn} | \textsc{sad, lam, waw, superscript alef, teh marbuta}
-[صلو ٰت]{.ar} | [SalawAt]{.trn} | \textsc{sad, lam, waw, \textcolor{blue}{cgj}, superscript alef, teh}
-[سمـٰو ٰت]{.ar} | [samAwAt]{.trn} | \textsc{seen, meem, \textcolor{blue}{cgj}, superscript alef, waw, \textcolor{blue}{cgj}, superscript alef, teh}
+[خطيءة]{.ar} | [xaTIEao]{.trn} | [khah, tah, yeh, **cgj**, hamza above, teh marbuta]{.smallcaps}
+[خاطئة]{.ar}  | [xATiEao]{.trn} | [khah, alef, tah, yeh, hamza above, teh marbuta]{.smallcaps}
+[لَءّال]{.ar}  | [laEEAl]{.trn} | [lam, fatha, **cgj**, hamza above, shaddah, alef, lam]{.smallcaps}
+[هٰذا]{.ar}   | [hApA]{.trn} | [heh, superscript alef, thal, alef]{.smallcaps}
+[هـٰذا]{.ar}  | [hApA]{.trn} | [heh, **cgj**, superscript alef, thal, alef]{.smallcaps}
+[هَـٰذا]{.ar}  | [hApA]{.trn} | [heh, fatha, **cgj**, superscript alef, thal, alef]{.smallcaps}
+[ذٰلك]{.ar}   | [pAlika]{.trn} | [thal, superscript alef, lam, kaf]{.smallcaps}
+[ذ ٰلك]{.ar}  | [pAlika]{.trn} | [thal, **cgj**, superscript alef, lam, kaf]{.smallcaps}
+[ذَ ٰلك]{.ar}  | [pAlika]{.trn} | [thal, fatha, **cgj**, superscript alef, lam, kaf]{.smallcaps}
+[صلوٰة]{.ar}  | [SalAo]{.trn} | [sad, lam, waw, superscript alef, teh marbuta]{.smallcaps}
+[صلو ٰت]{.ar} | [SalawAt]{.trn} | [sad, lam, waw, **cgj**, superscript alef, teh]{.smallcaps}
+[سمـٰو ٰت]{.ar} | [samAwAt]{.trn} | [seen, meem, **cgj**, superscript alef, waw, **cgj**, superscript alef, teh]{.smallcaps}
 
 # Other inline characters
 
 There exist other inline diacritical characters in Arabic used for displaying [#qurEAn]{.trn2}ic text like:
 
-1. [◌ࣳ]{.ar} \texttt{U+08F3} \textsc{arabic small high waw}. Example: [لِيَسُـࣳءُوا]{.ar} [liyasUEU]{.trn}.
-2. [◌ۧ]{.ar} \texttt{U+06E7} \textsc{arabic small high yeh}. Example: [وَلِـِّۧيَ]{.ar} [waliyyiya]{.trn}.
+1. [◌ࣳ]{.ar} `U+08F3` [arabic small high waw]{.smallcaps}. Example: [لِيَسُـࣳءُوا]{.ar} [liyasUEU]{.trn}.
+2. [◌ۧ]{.ar} `U+06E7` [arabic small high yeh]{.smallcaps}. Example: [وَلِـِّۧيَ]{.ar} [waliyyiya]{.trn}.
 
-These too are currently input using a \texttt{U+0640} \textsc{arabic tatweel}. However, the proposal to use \textsc{cgj} should work here as well. Note that, Unicode has separate non-joining characters corresponding to the above which, strictly speaking, will no longer be necessary:
+These too are currently input using a `U+0640` [arabic tatweel]{.smallcaps}. However, the proposal to use [cgj]{.smallcaps} should work here as well. Note that, Unicode has separate non-joining characters corresponding to the above which, strictly speaking, will no longer be necessary:
 
-1. [ۥ]{.ar} \texttt{U+06E5} \textsc{arabic small waw}.
-2. [ۦ]{.ar} \texttt{U+06E6} \textsc{arabic small yeh}.
+1. [ۥ]{.ar} `U+06E5` [arabic small waw]{.smallcaps}.
+2. [ۦ]{.ar} `U+06E6` [arabic small yeh]{.smallcaps}.
 
-But similar to the case of non-joining [hamzao]{.trn}, we recommend, for example, that the sequence \textsc{cgj}, [◌ࣳ]{.ar} \texttt{U+08F3} \textsc{arabic small high waw} after a non-joining base letter be displayed identical to [ۥ]{.ar} \texttt{U+06E5} \textsc{arabic small waw}.
+But similar to the case of non-joining [hamzao]{.trn}, we recommend, for example, that the sequence [cgj]{.smallcaps}, [◌ࣳ]{.ar} `U+08F3` [arabic small high waw]{.smallcaps} after a non-joining base letter be displayed identical to [ۥ]{.ar} `U+06E5` [arabic small waw]{.smallcaps}.
 
 # References

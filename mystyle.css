@@ -19,3 +19,6 @@
 body {
   font-family: "Computer Modern";
 }
+.smallcaps {
+  font-variant: small-caps;
+}
