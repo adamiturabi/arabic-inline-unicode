@@ -133,7 +133,7 @@ Dagger Alef can also be considered an inline character. Depending on the writing
 
 Unicode provides [◌ٰ]{.ar} `U+0670` [arabic superscript alef]{.smallcaps} to encode Dagger Alef. Being a combining character, `U+0670` [arabic superscript alef]{.smallcaps} is sufficient to encode case (1) above.
 
-Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using `U+0640` [arabic tatweel]{.smallcaps} combined with `U+0670` [arabic superscript alef]{.smallcaps} for case (2a), and `U+00A0` [no-break space (nbsp)]{.smallcaps} or `U+202F` [narrow no-break space (nnbsp)]{.smallcaps} combined with `U+0670` [arabic superscript alef]{.smallcaps} for case (2b).
+Cases (2a) and (2b) do not have a standard specification for being input. Many fonts propose using `U+00A0` [no-break space (nbsp)]{.smallcaps} or `U+202F` [narrow no-break space (nnbsp)]{.smallcaps} combined with `U+0670` [arabic superscript alef]{.smallcaps} for case (2a), and `U+0640` [arabic tatweel]{.smallcaps} combined with `U+0670` [arabic superscript alef]{.smallcaps} for case (2b).
 
 However, this solution is problematic for some of the same reasons as for [hamzao]{.trn}:
 
