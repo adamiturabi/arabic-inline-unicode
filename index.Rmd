@@ -182,17 +182,17 @@ Here are some examples of the proposed input sequences and the displayed renderi
 
 Arabic text | Transcription |Character input sequence
 :-------|:---------|:---------------
-[خطيءة]{.ar} | [xaTIEao]{.trn} | [khah, tah, yeh, **cgj**, hamza above, teh marbuta]{.smallcaps}
+[خطيءة]{.ar}  | [xaTIEao]{.trn} | [khah, tah, yeh, **cgj**, hamza above, teh marbuta]{.smallcaps}
 [خاطئة]{.ar}  | [xATiEao]{.trn} | [khah, alef, tah, yeh, hamza above, teh marbuta]{.smallcaps}
-[لَءّال]{.ar}  | [laEEAl]{.trn} | [lam, fatha, **cgj**, hamza above, shaddah, alef, lam]{.smallcaps}
-[هٰذا]{.ar}   | [hApA]{.trn} | [heh, superscript alef, thal, alef]{.smallcaps}
-[هـٰذا]{.ar}  | [hApA]{.trn} | [heh, **cgj**, superscript alef, thal, alef]{.smallcaps}
-[هَـٰذا]{.ar}  | [hApA]{.trn} | [heh, fatha, **cgj**, superscript alef, thal, alef]{.smallcaps}
-[ذٰلك]{.ar}   | [pAlika]{.trn} | [thal, superscript alef, lam, kaf]{.smallcaps}
-[ذ ٰلك]{.ar}  | [pAlika]{.trn} | [thal, **cgj**, superscript alef, lam, kaf]{.smallcaps}
-[ذَ ٰلك]{.ar}  | [pAlika]{.trn} | [thal, fatha, **cgj**, superscript alef, lam, kaf]{.smallcaps}
-[صلوٰة]{.ar}  | [SalAo]{.trn} | [sad, lam, waw, superscript alef, teh marbuta]{.smallcaps}
-[صلو ٰت]{.ar} | [SalawAt]{.trn} | [sad, lam, waw, **cgj**, superscript alef, teh]{.smallcaps}
+[لَءّال]{.ar}   | [laEEAl]{.trn}  | [lam, fatha, **cgj**, hamza above, shaddah, alef, lam]{.smallcaps}
+[هٰذا]{.ar}    | [hApA]{.trn}    | [heh, superscript alef, thal, alef]{.smallcaps}
+[هـٰذا]{.ar}   | [hApA]{.trn}    | [heh, **cgj**, superscript alef, thal, alef]{.smallcaps}
+[هَـٰذا]{.ar}   | [hApA]{.trn}    | [heh, fatha, **cgj**, superscript alef, thal, alef]{.smallcaps}
+[ذٰلك]{.ar}    | [pAlika]{.trn}  | [thal, superscript alef, lam, kaf]{.smallcaps}
+[ذ ٰلك]{.ar}   | [pAlika]{.trn}  | [thal, **cgj**, superscript alef, lam, kaf]{.smallcaps}
+[ذَ ٰلك]{.ar}   | [pAlika]{.trn}  | [thal, fatha, **cgj**, superscript alef, lam, kaf]{.smallcaps}
+[صلوٰة]{.ar}   | [SalAo]{.trn}   | [sad, lam, waw, superscript alef, teh marbuta]{.smallcaps}
+[صلو ٰت]{.ar}  | [SalawAt]{.trn} | [sad, lam, waw, **cgj**, superscript alef, teh]{.smallcaps}
 [سمـٰو ٰت]{.ar} | [samAwAt]{.trn} | [seen, meem, **cgj**, superscript alef, waw, **cgj**, superscript alef, teh]{.smallcaps}
 
 # Other inline characters
